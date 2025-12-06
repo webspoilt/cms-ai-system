@@ -1,634 +1,845 @@
+<div align="center">
+
 # AI-Powered Content Management System
 
-A comprehensive, production-ready content management system with advanced AI capabilities, real-time collaboration, and modern architecture.
+<img src="https://img.shields.io/badge/MERN-Stack-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MERN Stack"/>
+<img src="https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js"/>
+<img src="https://img.shields.io/badge/TypeScript-5.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+<img src="https://img.shields.io/badge/Tailwind-3.3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
+<img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"/>
 
-## 🚀 Features
+<br/>
 
-### Core Features
-- **Modern Frontend**: React.js with Next.js, TypeScript, and Tailwind CSS
-- **Dark Mode First**: Sophisticated glassmorphism design with cyan/violet accents
-- **AI-Powered Content**: GPT integration for content generation, SEO optimization, and analysis
-- **Real-time Collaboration**: WebSocket-based collaborative editing with live cursors
-- **Drag & Drop Builder**: Visual content editor with component-based architecture
-- **Multi-language Support**: i18n with AI translation capabilities
-- **Progressive Web App**: Offline access and mobile installation
-- **Advanced Analytics**: Comprehensive dashboard with real-time metrics
+**A modern, AI-powered content management system built with the MERN stack**
 
-### Architecture
-- **Microservices**: Independent, scalable services (Auth, AI, Content, Analytics)
-- **API Gateway**: Centralized routing and authentication
-- **Event-Driven**: RabbitMQ for inter-service communication
-- **Search Engine**: Elasticsearch for powerful content search
-- **File Storage**: S3-compatible storage with CDN
-- **Caching Layer**: Redis for performance optimization
-- **Database**: MongoDB with proper indexing and sharding support
+[Live Demo](#demo) · [Features](#-features) · [Quick Start](#-quick-start) · [Documentation](#-api-documentation) · [Contributing](#-contributing)
 
-### Security & Performance
-- **JWT + OAuth 2.0**: Multiple authentication methods
-- **Rate Limiting**: DDoS protection and request throttling
-- **Input Validation**: Comprehensive request sanitization
-- **Error Handling**: Centralized error management
-- **Logging**: Structured logging with Winston
-- **Monitoring**: Prometheus + Grafana integration
+<br/>
 
-## 🏗️ Architecture Overview
+<a href="https://github.com/webspoilt/cms-ai-system">
+  <img src="https://img.shields.io/github/stars/webspoilt/cms-ai-system?style=social" alt="GitHub stars"/>
+</a>
+<a href="https://github.com/webspoilt/cms-ai-system/fork">
+  <img src="https://img.shields.io/github/forks/webspoilt/cms-ai-system?style=social" alt="GitHub forks"/>
+</a>
+
+</div>
+
+---
+
+## Table of Contents
+
+- [About The Project](#about-the-project)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Architecture](#-architecture)
+- [Quick Start](#-quick-start)
+- [Project Structure](#-project-structure)
+- [Environment Variables](#-environment-variables)
+- [API Documentation](#-api-documentation)
+- [Database Schema](#-database-schema)
+- [Deployment](#-deployment)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
+
+---
+
+## About The Project
+
+**AI CMS** is a next-generation content management system that leverages artificial intelligence to revolutionize how you create, manage, and optimize digital content. Built with a modern MERN stack architecture, it combines the power of AI with an intuitive, beautifully designed interface.
+
+### Who Is This For?
+
+| User Type | Use Case |
+|-----------|----------|
+| **Content Creators** | Write blog posts with AI assistance, auto-generate SEO metadata |
+| **Marketing Teams** | Create marketing copy at scale, analyze content performance |
+| **Developers** | Headless CMS with clean REST API, easy to extend and customize |
+| **Agencies** | Multi-user collaboration, client content management |
+| **Startups** | Quick content deployment, built-in analytics |
+
+### Why AI CMS?
+
+- **Save Time** - AI generates content drafts, SEO tags, and translations automatically
+- **Boost SEO** - Built-in optimization tools improve search rankings
+- **Collaborate** - Real-time editing with your team
+- **Scale** - Microservices architecture handles growth effortlessly
+- **Customize** - Open source and fully extensible
+
+---
+
+## ✨ Features
+
+### Core CMS Features
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **Rich Text Editor** | WYSIWYG editor with markdown support, code blocks, and media embedding | ✅ Ready |
+| **Media Library** | Upload, organize, and optimize images with automatic compression | ✅ Ready |
+| **Categories & Tags** | Hierarchical content organization with color-coded categories | ✅ Ready |
+| **Version Control** | Full revision history with diff view and one-click restore | ✅ Ready |
+| **Content Scheduling** | Schedule posts for future publication with timezone support | ✅ Ready |
+| **Multi-language** | i18n support with 20+ languages | ✅ Ready |
+| **SEO Tools** | Meta tags, sitemap generation, structured data | ✅ Ready |
+
+### AI-Powered Features
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **Content Generation** | Generate articles, blog posts, and marketing copy using GPT-4 | ✅ Ready |
+| **SEO Optimization** | AI analyzes and optimizes content for search engines | ✅ Ready |
+| **Auto Translation** | Translate content to 50+ languages instantly | ✅ Ready |
+| **Plagiarism Detection** | Check content originality before publishing | ✅ Ready |
+| **Readability Analysis** | Get readability scores and improvement suggestions | ✅ Ready |
+| **Image Alt Text** | Auto-generate accessible alt text for images | ✅ Ready |
+| **Content Summarization** | Generate excerpts and social media snippets | ✅ Ready |
+
+### Collaboration Features
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **Real-time Editing** | Google Docs-style simultaneous editing | ✅ Ready |
+| **Live Cursors** | See where teammates are working in real-time | ✅ Ready |
+| **Comments & Mentions** | Inline commenting with @mentions | ✅ Ready |
+| **Role-Based Access** | Admin, Editor, Author, Viewer roles | ✅ Ready |
+| **Activity Feed** | Track all changes across your workspace | ✅ Ready |
+| **Notifications** | Email and in-app notifications | ✅ Ready |
+
+### Analytics & Insights
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **Traffic Dashboard** | Views, visitors, bounce rate, time on page | ✅ Ready |
+| **Content Performance** | Track engagement per article | ✅ Ready |
+| **Audience Insights** | Demographics, devices, locations | ✅ Ready |
+| **Custom Reports** | Build and export custom analytics reports | ✅ Ready |
+| **A/B Testing** | Test headlines and content variations | 🚧 Coming |
+
+### Security Features
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **JWT Authentication** | Secure token-based authentication | ✅ Ready |
+| **OAuth 2.0** | Login with Google, GitHub, LinkedIn | ✅ Ready |
+| **Two-Factor Auth** | TOTP-based 2FA for enhanced security | ✅ Ready |
+| **Rate Limiting** | Protection against brute force attacks | ✅ Ready |
+| **Input Sanitization** | XSS and injection prevention | ✅ Ready |
+| **CORS Configuration** | Secure cross-origin policies | ✅ Ready |
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| **Next.js** | React framework with SSR/SSG | 14.0.4 |
+| **React** | UI component library | 18.2.0 |
+| **TypeScript** | Type-safe JavaScript | 5.3.3 |
+| **Tailwind CSS** | Utility-first CSS framework | 3.3.6 |
+| **Framer Motion** | Animation library | 10.16.16 |
+| **React Query** | Server state management | 3.39.3 |
+| **Socket.io Client** | Real-time communication | 4.7.4 |
+| **Recharts** | Data visualization | 2.10.3 |
+
+### Backend
+
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| **Node.js** | JavaScript runtime | 18+ |
+| **Express.js** | Web framework | 4.18.2 |
+| **TypeScript** | Type-safe JavaScript | 5.3.3 |
+| **Mongoose** | MongoDB ODM | 8.0.3 |
+| **Socket.io** | WebSocket server | 4.7.4 |
+| **Passport.js** | Authentication middleware | 0.7.0 |
+| **Winston** | Logging library | 3.11.0 |
+
+### Database & Cache
+
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| **MongoDB** | Primary database | 7.0 |
+| **Redis** | Caching & sessions | 7.2 |
+| **Elasticsearch** | Full-text search | 8.11 (optional) |
+
+### DevOps & Tools
+
+| Technology | Purpose |
+|------------|---------|
+| **Docker** | Containerization |
+| **Docker Compose** | Multi-container orchestration |
+| **GitHub Actions** | CI/CD pipeline |
+| **ESLint** | Code linting |
+| **Prettier** | Code formatting |
+| **Jest** | Testing framework |
+
+---
+
+## 🏗 Architecture
+
+### System Overview
 
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   API Gateway    │    │  Load Balancer  │
-│   (Next.js)     │◄──►│   (Express)      │◄──►│    (Nginx)      │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-         │                       │
-         │              ┌────────▼────────┐
-         │              │   Microservices │
-         │              ├─────────────────┤
-         │              │ Auth Service    │
-         │              │ AI Service      │
-         │              │ Content Service │
-         │              │ Analytics Svc   │
-         │              └─────────────────┘
-         │                       │
-┌────────▼────────┐    ┌────────▼────────┐
-│   WebSocket     │    │   Message Queue │
-│   (Socket.io)   │    │   (RabbitMQ)    │
-└─────────────────┘    └─────────────────┘
-         │                       │
-┌────────▼────────┐    ┌────────▼────────┐
-│   Cache Layer   │    │   File Storage  │
-│   (Redis)       │    │   (S3/MinIO)    │
-└─────────────────┘    └─────────────────┘
-         │                       │
-┌────────▼────────┐    ┌────────▼────────┐
-│   Database      │    │   Search Engine │
-│   (MongoDB)     │    │ (Elasticsearch) │
-└─────────────────┘    └─────────────────┘
+                                    ┌─────────────────────────────────┐
+                                    │         LOAD BALANCER           │
+                                    │           (Nginx)               │
+                                    └───────────────┬─────────────────┘
+                                                    │
+                    ┌───────────────────────────────┼───────────────────────────────┐
+                    │                               │                               │
+                    ▼                               ▼                               ▼
+        ┌───────────────────┐           ┌───────────────────┐           ┌───────────────────┐
+        │    FRONTEND       │           │    FRONTEND       │           │    FRONTEND       │
+        │   (Next.js)       │           │   (Next.js)       │           │   (Next.js)       │
+        │   Instance 1      │           │   Instance 2      │           │   Instance N      │
+        └─────────┬─────────┘           └─────────┬─────────┘           └─────────┬─────────┘
+                  │                               │                               │
+                  └───────────────────────────────┼───────────────────────────────┘
+                                                  │
+                                                  ▼
+                                    ┌─────────────────────────────────┐
+                                    │         API GATEWAY             │
+                                    │      (Express + JWT Auth)       │
+                                    └───────────────┬─────────────────┘
+                                                    │
+                  ┌─────────────────┬───────────────┼───────────────┬─────────────────┐
+                  │                 │               │               │                 │
+                  ▼                 ▼               ▼               ▼                 ▼
+        ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+        │  AUTH SERVICE   │ │   AI SERVICE    │ │ CONTENT SERVICE │ │ANALYTICS SERVICE│
+        │                 │ │                 │ │                 │ │                 │
+        │ • User CRUD     │ │ • GPT Integration│ │ • CRUD Ops     │ │ • Metrics       │
+        │ • JWT/OAuth     │ │ • SEO Analysis  │ │ • Versioning   │ │ • Reports       │
+        │ • 2FA           │ │ • Translation   │ │ • Search       │ │ • Tracking      │
+        │ • Sessions      │ │ • Summarization │ │ • Categories   │ │ • Dashboards    │
+        └────────┬────────┘ └────────┬────────┘ └────────┬────────┘ └────────┬────────┘
+                 │                   │                   │                   │
+                 └───────────────────┴───────────────────┴───────────────────┘
+                                                  │
+                          ┌───────────────────────┼───────────────────────┐
+                          │                       │                       │
+                          ▼                       ▼                       ▼
+                ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+                │    MONGODB      │     │     REDIS       │     │   FILE STORAGE  │
+                │   (Primary DB)  │     │    (Cache)      │     │   (S3/MinIO)    │
+                └─────────────────┘     └─────────────────┘     └─────────────────┘
 ```
 
-## 📋 Prerequisites
+### Data Flow
 
-- **Node.js** 18+ and npm/yarn
-- **Docker** and Docker Compose
-- **MongoDB** 7.0+
-- **Redis** 7.2+
-- **Elasticsearch** 8.11+
-- **Git** for version control
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                              REQUEST FLOW                                        │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  1. User Action          2. API Request         3. Auth Check                   │
+│  ┌─────────┐            ┌─────────────┐        ┌─────────────┐                  │
+│  │  User   │ ──────────>│   Next.js   │ ──────>│   Gateway   │                  │
+│  │ Browser │            │  Frontend   │        │  + JWT Auth │                  │
+│  └─────────┘            └─────────────┘        └──────┬──────┘                  │
+│                                                       │                          │
+│  6. Response             5. Format                4. Process                    │
+│  ┌─────────┐            ┌─────────────┐        ┌──────▼──────┐                  │
+│  │  User   │ <──────────│   Next.js   │ <──────│ Microservice│                  │
+│  │ Browser │            │  Frontend   │        │   (CRUD)    │                  │
+│  └─────────┘            └─────────────┘        └─────────────┘                  │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
 
-### API Keys Required
-- **OpenAI API Key** (for AI content generation)
-- **Google Cloud** credentials (for image analysis)
-- **OAuth Provider Keys** (Google, GitHub, LinkedIn)
-- **SMTP** credentials (for email notifications)
+---
 
-## 🛠️ Installation & Setup
+## 🚀 Quick Start
 
-### 1. Clone the Repository
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+| Requirement | Minimum Version | Check Command |
+|-------------|-----------------|---------------|
+| Node.js | 18.0.0 | `node --version` |
+| npm | 9.0.0 | `npm --version` |
+| Docker | 20.0.0 | `docker --version` |
+| Git | 2.0.0 | `git --version` |
+
+### Installation
+
+#### Step 1: Clone the Repository
+
 ```bash
-git clone https://github.com/your-org/ai-cms.git
-cd ai-cms
+git clone https://github.com/webspoilt/cms-ai-system.git
+cd cms-ai-system
 ```
 
-### 2. Environment Configuration
+#### Step 2: Set Up Environment Variables
+
 ```bash
-# Copy environment template
+# Copy the example environment file
 cp .env.example .env
 
-# Edit the .env file with your configuration
-nano .env
+# Open and edit with your values
+nano .env  # or use any text editor
 ```
 
-### 3. Install Dependencies
+#### Step 3: Install Dependencies
+
 ```bash
-# Install root dependencies
+# Install frontend dependencies
+cd frontend
 npm install
 
-# Install all service dependencies
-npm run setup
+# Install backend dependencies
+cd ../backend/auth
+npm install
 ```
 
-### 4. Start with Docker (Recommended)
+#### Step 4: Start the Application
+
+**Option A: Using Docker (Recommended)**
+
 ```bash
-# Build and start all services
+# From project root
 docker-compose up -d
 
 # View logs
 docker-compose logs -f
-
-# Stop services
-docker-compose down
 ```
 
-### 5. Manual Setup (Alternative)
-```bash
-# Start databases
-docker run -d --name mongo -p 27017:27017 mongo:7.0
-docker run -d --name redis -p 6379:6379 redis:7.2-alpine
-docker run -d --name elasticsearch -p 9200:9200 elasticsearch:8.11.0
+**Option B: Manual Start**
 
-# Start backend services
-cd backend
+```bash
+# Terminal 1: Start MongoDB
+docker run -d -p 27017:27017 --name mongo mongo:7.0
+
+# Terminal 2: Start Redis
+docker run -d -p 6379:6379 --name redis redis:7.2-alpine
+
+# Terminal 3: Start Backend
+cd backend/auth
 npm run dev
 
-# Start frontend (in new terminal)
+# Terminal 4: Start Frontend
 cd frontend
 npm run dev
 ```
 
-## 🚀 Running the Application
+#### Step 5: Access the Application
 
-### Development Mode
-```bash
-# Start all services in development
-npm run dev
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:3000 |
+| Backend API | http://localhost:3002 |
+| API Health Check | http://localhost:3002/health |
 
-# Or start individually
-npm run dev:frontend  # Frontend on http://localhost:3000
-npm run dev:backend   # Backend services
+---
+
+## 📁 Project Structure
+
+```
+cms-ai-system/
+│
+├── frontend/                          # Next.js Frontend Application
+│   ├── public/                        # Static files (images, fonts)
+│   ├── src/
+│   │   ├── app/                       # Next.js 14 App Router
+│   │   │   ├── layout.tsx            # Root layout with providers
+│   │   │   ├── page.tsx              # Dashboard home page
+│   │   │   ├── content/              # Content management pages
+│   │   │   ├── media/                # Media library pages
+│   │   │   ├── analytics/            # Analytics dashboard
+│   │   │   └── settings/             # User settings
+│   │   │
+│   │   ├── components/               # React Components
+│   │   │   ├── ui/                   # Base UI (Button, Card, Input)
+│   │   │   ├── layout/               # Layout (Sidebar, Header)
+│   │   │   ├── tables/               # Data tables
+│   │   │   ├── charts/               # Chart components
+│   │   │   ├── modals/               # Modal dialogs
+│   │   │   ├── providers/            # Context providers
+│   │   │   └── activity/             # Activity components
+│   │   │
+│   │   ├── services/                 # API Service Layer
+│   │   │   ├── api.ts               # Base API client (Axios)
+│   │   │   ├── auth.ts              # Authentication service
+│   │   │   ├── content.ts           # Content CRUD service
+│   │   │   ├── media.ts             # Media upload service
+│   │   │   ├── ai.ts                # AI service integration
+│   │   │   └── analytics.ts         # Analytics service
+│   │   │
+│   │   ├── types/                    # TypeScript Definitions
+│   │   │   └── index.ts             # All type definitions
+│   │   │
+│   │   ├── utils/                    # Utility Functions
+│   │   │   └── index.ts             # Helpers (cn, formatDate, etc.)
+│   │   │
+│   │   └── styles/                   # Global Styles
+│   │       └── globals.css          # Tailwind + custom CSS
+│   │
+│   ├── tailwind.config.js           # Tailwind configuration
+│   ├── next.config.js               # Next.js configuration
+│   ├── tsconfig.json                # TypeScript configuration
+│   └── package.json                 # Frontend dependencies
+│
+├── backend/                          # Node.js Backend Services
+│   │
+│   ├── auth/                         # Authentication Service
+│   │   ├── src/
+│   │   │   ├── config/              # Database & Redis config
+│   │   │   ├── controllers/         # Route handlers
+│   │   │   ├── middleware/          # Auth, validation, rate limit
+│   │   │   ├── models/              # Mongoose schemas
+│   │   │   ├── routes/              # Express routes
+│   │   │   ├── services/            # Business logic
+│   │   │   ├── utils/               # Helpers (logger, etc.)
+│   │   │   └── index.ts             # App entry point
+│   │   ├── tsconfig.json
+│   │   └── package.json
+│   │
+│   ├── ai/                           # AI Service (OpenAI integration)
+│   ├── content/                      # Content Management Service
+│   ├── analytics/                    # Analytics Service
+│   ├── gateway/                      # API Gateway
+│   └── package.json                 # Shared dependencies
+│
+├── docker-compose.yml               # Docker multi-container config
+├── .env.example                     # Environment variables template
+├── .gitignore                       # Git ignore rules
+├── LICENSE                          # MIT License
+└── README.md                        # This file
 ```
 
-### Production Mode
-```bash
-# Build all services
-npm run build
+---
 
-# Start production servers
-npm start
+## 🔐 Environment Variables
+
+### Required Variables
+
+```bash
+# ===========================================
+# APPLICATION
+# ===========================================
+NODE_ENV=development                    # development | production | test
+PORT=3002                               # Backend server port
+FRONTEND_URL=http://localhost:3000      # Frontend URL for CORS
+
+# ===========================================
+# DATABASE
+# ===========================================
+MONGODB_URI=mongodb://localhost:27017/ai-cms
+
+# ===========================================
+# REDIS (Cache & Sessions)
+# ===========================================
+REDIS_URL=redis://localhost:6379
+
+# ===========================================
+# AUTHENTICATION
+# ===========================================
+JWT_SECRET=your-super-secret-jwt-key-change-in-production
+JWT_EXPIRES_IN=24h
+REFRESH_TOKEN_SECRET=your-refresh-token-secret
+REFRESH_TOKEN_EXPIRES_IN=7d
 ```
 
-### Docker Production
+### Optional Variables
+
+```bash
+# ===========================================
+# OAUTH PROVIDERS
+# ===========================================
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
+LINKEDIN_CLIENT_ID=your-linkedin-client-id
+LINKEDIN_CLIENT_SECRET=your-linkedin-client-secret
+
+# ===========================================
+# AI SERVICES
+# ===========================================
+OPENAI_API_KEY=sk-your-openai-api-key
+OPENAI_MODEL=gpt-4                      # gpt-4 | gpt-3.5-turbo
+
+# ===========================================
+# FILE STORAGE (S3 Compatible)
+# ===========================================
+AWS_ACCESS_KEY_ID=your-aws-key
+AWS_SECRET_ACCESS_KEY=your-aws-secret
+AWS_S3_BUCKET=your-bucket-name
+AWS_REGION=us-east-1
+
+# ===========================================
+# EMAIL (SMTP)
+# ===========================================
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+EMAIL_FROM=noreply@yourcms.com
+
+# ===========================================
+# MONITORING (Optional)
+# ===========================================
+SENTRY_DSN=your-sentry-dsn
+```
+
+---
+
+## 📚 API Documentation
+
+### Base URL
+
+```
+Development: http://localhost:3002/api
+Production:  https://your-domain.com/api
+```
+
+### Authentication Endpoints
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `POST` | `/auth/register` | Register a new user | No |
+| `POST` | `/auth/login` | Login and get tokens | No |
+| `POST` | `/auth/logout` | Logout and invalidate tokens | Yes |
+| `POST` | `/auth/refresh` | Refresh access token | Yes |
+| `GET` | `/auth/me` | Get current user profile | Yes |
+| `POST` | `/auth/forgot-password` | Request password reset | No |
+| `POST` | `/auth/reset-password` | Reset password with token | No |
+| `POST` | `/auth/change-password` | Change current password | Yes |
+| `POST` | `/auth/2fa/enable` | Enable two-factor auth | Yes |
+| `POST` | `/auth/2fa/verify` | Verify 2FA code | Yes |
+
+#### Example: Register User
+
+```bash
+curl -X POST http://localhost:3002/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "SecurePass123",
+    "confirmPassword": "SecurePass123"
+  }'
+```
+
+#### Example: Login
+
+```bash
+curl -X POST http://localhost:3002/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com",
+    "password": "SecurePass123"
+  }'
+```
+
+### Content Endpoints
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `GET` | `/content` | List all content (paginated) | Yes |
+| `POST` | `/content` | Create new content | Yes |
+| `GET` | `/content/:id` | Get single content by ID | Yes |
+| `PATCH` | `/content/:id` | Update content | Yes |
+| `DELETE` | `/content/:id` | Delete content | Yes |
+| `POST` | `/content/:id/publish` | Publish content | Yes |
+| `POST` | `/content/:id/unpublish` | Unpublish content | Yes |
+| `POST` | `/content/:id/duplicate` | Duplicate content | Yes |
+| `GET` | `/content/:id/revisions` | Get revision history | Yes |
+
+#### Example: Create Content
+
+```bash
+curl -X POST http://localhost:3002/api/content \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -d '{
+    "title": "My First Article",
+    "content": "# Hello World\n\nThis is my first article.",
+    "type": "article",
+    "status": "draft",
+    "tags": ["tutorial", "beginner"]
+  }'
+```
+
+### AI Endpoints
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `POST` | `/ai/generate` | Generate content with AI | Yes |
+| `POST` | `/ai/optimize` | Optimize content for SEO | Yes |
+| `POST` | `/ai/analyze` | Analyze content quality | Yes |
+| `POST` | `/ai/translate` | Translate content | Yes |
+| `POST` | `/ai/summarize` | Generate summary/excerpt | Yes |
+
+#### Example: Generate Content
+
+```bash
+curl -X POST http://localhost:3002/api/ai/generate \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -d '{
+    "type": "article",
+    "prompt": "Write a blog post about sustainable technology trends in 2024",
+    "context": {
+      "tone": "professional",
+      "length": "medium",
+      "targetAudience": "tech enthusiasts"
+    }
+  }'
+```
+
+### Media Endpoints
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `POST` | `/media/upload` | Upload a file | Yes |
+| `GET` | `/media` | List all media files | Yes |
+| `GET` | `/media/:id` | Get file details | Yes |
+| `PATCH` | `/media/:id` | Update file metadata | Yes |
+| `DELETE` | `/media/:id` | Delete file | Yes |
+| `POST` | `/media/:id/optimize` | Optimize image | Yes |
+
+---
+
+## 🗄 Database Schema
+
+### User Model
+
+```javascript
+{
+  _id: ObjectId,
+  name: String,              // Required, 2-50 chars
+  email: String,             // Required, unique, lowercase
+  password: String,          // Hashed, min 8 chars
+  avatar: String,            // URL
+  role: String,              // admin | editor | author | viewer
+  isEmailVerified: Boolean,
+  twoFactorEnabled: Boolean,
+  preferences: {
+    theme: String,           // light | dark | system
+    notifications: Boolean,
+    language: String
+  },
+  lastLogin: Date,
+  isActive: Boolean,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Content Model
+
+```javascript
+{
+  _id: ObjectId,
+  title: String,             // Required
+  slug: String,              // Auto-generated, unique
+  content: String,           // Markdown/HTML
+  excerpt: String,           // Short description
+  type: String,              // article | page | post | landing
+  status: String,            // draft | published | archived
+  author: ObjectId,          // Reference to User
+  category: ObjectId,        // Reference to Category
+  tags: [String],
+  featuredImage: ObjectId,   // Reference to Media
+  seo: {
+    title: String,
+    description: String,
+    keywords: [String]
+  },
+  publishedAt: Date,
+  scheduledAt: Date,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+---
+
+## 🌐 Deployment
+
+### Free Hosting Options
+
+| Service | Type | Free Tier | Best For |
+|---------|------|-----------|----------|
+| **Vercel** | Frontend | Unlimited | Next.js apps |
+| **Railway** | Full Stack | $5/month credit | Quick deployment |
+| **Render** | Backend | 750 hrs/month | API hosting |
+| **MongoDB Atlas** | Database | 512MB | MongoDB hosting |
+| **Upstash** | Redis | 10K cmds/day | Redis cache |
+| **Cloudflare R2** | Storage | 10GB | File storage |
+
+### Deploy to Vercel (Frontend)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy frontend
+cd frontend
+vercel
+
+# Follow prompts to configure
+```
+
+### Deploy to Railway (Full Stack)
+
+1. Push code to GitHub
+2. Go to [railway.app](https://railway.app)
+3. Create new project → Deploy from GitHub
+4. Add MongoDB service
+5. Add Redis service
+6. Configure environment variables
+7. Deploy!
+
+### Docker Production Deployment
+
 ```bash
 # Build production images
 docker-compose -f docker-compose.prod.yml build
 
 # Start production services
 docker-compose -f docker-compose.prod.yml up -d
-```
-
-## 📁 Project Structure
-
-```
-ai-cms/
-├── frontend/                 # Next.js Frontend Application
-│   ├── src/
-│   │   ├── app/             # Next.js App Router
-│   │   ├── components/      # Reusable UI Components
-│   │   ├── services/        # API Service Layer
-│   │   ├── hooks/           # Custom React Hooks
-│   │   ├── types/           # TypeScript Definitions
-│   │   ├── utils/           # Utility Functions
-│   │   └── styles/          # Global Styles
-│   ├── public/              # Static Assets
-│   ├── package.json
-│   └── next.config.js
-├── backend/                 # Node.js Microservices
-│   ├── gateway/             # API Gateway
-│   ├── auth/                # Authentication Service
-│   ├── ai/                  # AI Content Service
-│   ├── content/             # Content Management Service
-│   ├── analytics/           # Analytics & Reporting Service
-│   └── shared/              # Shared utilities
-├── infrastructure/          # Deployment & DevOps
-│   ├── docker/             # Docker configurations
-│   ├── k8s/                # Kubernetes manifests
-│   ├── terraform/          # Infrastructure as Code
-│   └── monitoring/         # Monitoring setup
-├── docs/                   # Documentation
-├── scripts/                # Setup & utility scripts
-└── tests/                  # Test suites
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-Key environment variables you need to configure:
-
-```bash
-# Core Application
-NODE_ENV=development
-PORT=3001
-APP_URL=http://localhost:3000
-
-# Database
-MONGODB_URI=mongodb://localhost:27017/ai-cms
-REDIS_URL=redis://localhost:6379
-
-# Authentication
-JWT_SECRET=your-jwt-secret
-GOOGLE_CLIENT_ID=your-google-client-id
-GITHUB_CLIENT_ID=your-github-client-id
-
-# AI Services
-OPENAI_API_KEY=sk-your-openai-key
-GOOGLE_APPLICATION_CREDENTIALS=./config/google-credentials.json
-
-# File Storage
-AWS_ACCESS_KEY_ID=your-aws-key
-AWS_SECRET_ACCESS_KEY=your-aws-secret
-AWS_S3_BUCKET=your-bucket-name
-```
-
-### API Service Configuration
-Each microservice can be configured independently:
-
-```bash
-# Auth Service
-AUTH_PORT=3002
-JWT_EXPIRES_IN=24h
-SESSION_MAX_AGE=86400000
-
-# AI Service
-AI_PORT=3003
-OPENAI_MODEL=gpt-4
-HUGGING_FACE_API_KEY=your-hf-key
-
-# Content Service
-CONTENT_PORT=3004
-UPLOAD_MAX_SIZE=10485760
-SEARCH_ENGINE_URL=http://localhost:9200
-
-# Analytics Service
-ANALYTICS_PORT=3005
-BATCH_SIZE=1000
-REPORT_RETENTION_DAYS=30
-```
-
-## 🎯 Usage Guide
-
-### 1. User Management
-```javascript
-// Register new user
-POST /api/auth/register
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "SecurePass123",
-  "role": "author"
-}
-
-// Login
-POST /api/auth/login
-{
-  "email": "john@example.com",
-  "password": "SecurePass123",
-  "rememberMe": true
-}
-```
-
-### 2. Content Management
-```javascript
-// Create content
-POST /api/content
-{
-  "title": "My Article",
-  "content": "# Hello World",
-  "type": "article",
-  "categoryId": "category123",
-  "status": "draft"
-}
-
-// Get content
-GET /api/content/:id
-
-// Update content
-PATCH /api/content/:id
-{
-  "title": "Updated Title",
-  "content": "Updated content..."
-}
-```
-
-### 3. AI Content Generation
-```javascript
-// Generate content
-POST /api/ai/generate
-{
-  "type": "article",
-  "prompt": "Write about sustainable technology",
-  "context": {
-    "targetAudience": "tech professionals",
-    "tone": "professional",
-    "length": "medium"
-  }
-}
-
-// Optimize content for SEO
-POST /api/ai/optimize
-{
-  "content": "Your article content...",
-  "target": "seo",
-  "keywords": ["sustainable", "technology", "innovation"]
-}
-```
-
-### 4. Media Management
-```javascript
-// Upload file
-POST /api/media/upload
-Content-Type: multipart/form-data
-file: [binary data]
-
-// Get media files
-GET /api/media?page=1&limit=20&type=image
-
-// Search media
-GET /api/media/search?q=logo&type=image
-```
-
-## 🧪 Testing
-
-### Run All Tests
-```bash
-npm test
-
-# Or run individually
-npm run test:frontend
-npm run test:backend
-npm run test:auth
-npm run test:ai
-npm run test:content
-npm run test:analytics
-```
-
-### Test Coverage
-```bash
-# Generate coverage report
-npm run test:coverage
-
-# View coverage in browser
-open coverage/lcov-report/index.html
-```
-
-### API Testing
-```bash
-# Test with Postman collection
-npm run test:api
-
-# Or use the provided test scripts
-./scripts/test-api.sh
-```
-
-## 📊 Monitoring & Analytics
-
-### Health Checks
-```bash
-# Check all service health
-curl http://localhost:3001/health
-
-# Individual service health
-curl http://localhost:3002/health  # Auth
-curl http://localhost:3003/health  # AI
-curl http://localhost:3004/health  # Content
-curl http://localhost:3005/health  # Analytics
-```
-
-### Monitoring Dashboard
-- **Grafana**: http://localhost:3006 (admin/admin123)
-- **Prometheus**: http://localhost:9090
-- **Redis Commander**: http://localhost:8081
-- **Elasticsearch**: http://localhost:9200
-
-### Performance Monitoring
-- **Application Performance**: Built-in metrics
-- **Database Performance**: MongoDB/Redis monitoring
-- **API Performance**: Response time tracking
-- **Resource Usage**: CPU/Memory/Network monitoring
-
-## 🚀 Deployment
-
-### Docker Production Deployment
-```bash
-# Build production images
-docker-compose -f docker-compose.prod.yml build
-
-# Deploy to production
-docker-compose -f docker-compose.prod.yml up -d
 
 # Scale services
-docker-compose -f docker-compose.prod.yml up -d --scale content=3
+docker-compose -f docker-compose.prod.yml up -d --scale api=3
 ```
-
-### Kubernetes Deployment
-```bash
-# Apply Kubernetes manifests
-kubectl apply -f infrastructure/k8s/
-
-# Check deployment status
-kubectl get pods -n ai-cms
-kubectl get services -n ai-cms
-```
-
-### AWS/GCP Deployment
-```bash
-# Using Terraform for infrastructure
-cd infrastructure/terraform
-terraform init
-terraform plan
-terraform apply
-
-# Deploy with CI/CD
-./scripts/deploy.sh production
-```
-
-### Environment-Specific Configurations
-- **Development**: Local Docker setup
-- **Staging**: Cloud staging environment
-- **Production**: High-availability cloud deployment
-
-## 🔒 Security
-
-### Security Features
-- **Authentication**: JWT + OAuth 2.0 + 2FA
-- **Authorization**: Role-based access control (RBAC)
-- **Data Protection**: Encryption at rest and in transit
-- **Input Validation**: Comprehensive request sanitization
-- **Rate Limiting**: DDoS protection and request throttling
-- **Security Headers**: Helmet.js integration
-- **CORS Configuration**: Proper cross-origin setup
-- **SQL Injection Prevention**: Parameterized queries
-
-### Security Checklist
-- [ ] Change default passwords
-- [ ] Configure SSL certificates
-- [ ] Set up proper firewall rules
-- [ ] Enable audit logging
-- [ ] Regular security updates
-- [ ] Implement backup strategy
-- [ ] Set up monitoring alerts
-- [ ] Security penetration testing
-
-## 🤝 Contributing
-
-### Development Workflow
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### Code Standards
-- **TypeScript**: Strict type checking
-- **ESLint**: Code linting rules
-- **Prettier**: Code formatting
-- **Husky**: Git hooks for pre-commit checks
-- **Conventional Commits**: Standardized commit messages
-
-### Development Guidelines
-- Write comprehensive tests
-- Follow the established architecture patterns
-- Document all public APIs
-- Ensure responsive design
-- Optimize for performance
-- Follow accessibility guidelines
-
-## 📈 Performance Optimization
-
-### Frontend Optimizations
-- **Code Splitting**: Dynamic imports for better loading
-- **Image Optimization**: Next.js Image component
-- **Caching**: Service worker and HTTP caching
-- **Bundle Analysis**: Webpack bundle analyzer
-- **Core Web Vitals**: Optimized for performance
-
-### Backend Optimizations
-- **Database Indexing**: Optimized MongoDB queries
-- **Caching Strategy**: Redis for frequently accessed data
-- **Connection Pooling**: Efficient database connections
-- **Compression**: Gzip compression for API responses
-- **Load Balancing**: Horizontal scaling support
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-#### Database Connection Issues
-```bash
-# Check MongoDB status
-docker logs mongo
-
-# Check MongoDB connection
-mongosh --host localhost:27017
-
-# Reset database
-docker-compose down -v
-docker-compose up -d mongo
-```
-
-#### Redis Connection Issues
-```bash
-# Check Redis status
-docker logs redis
-
-# Test Redis connection
-redis-cli ping
-```
-
-#### Frontend Build Issues
-```bash
-# Clear Next.js cache
-rm -rf .next
-rm -rf node_modules
-npm install
-npm run build
-```
-
-#### Permission Issues
-```bash
-# Fix file permissions
-sudo chown -R $USER:$USER .
-chmod +x scripts/*.sh
-```
-
-### Debug Mode
-```bash
-# Enable debug logging
-DEBUG=ai-cms:* npm run dev
-
-# API debugging
-curl -v http://localhost:3001/health
-
-# Database debugging
-mongosh --eval "db.runCommand('serverStatus')"
-```
-
-## 📚 API Documentation
-
-### Authentication Endpoints
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/auth/logout` - User logout
-- `POST /api/auth/refresh` - Refresh JWT token
-- `GET /api/auth/me` - Get current user
-- `POST /api/auth/forgot-password` - Request password reset
-- `POST /api/auth/reset-password` - Reset password
-
-### Content Endpoints
-- `GET /api/content` - List content with pagination
-- `POST /api/content` - Create new content
-- `GET /api/content/:id` - Get specific content
-- `PATCH /api/content/:id` - Update content
-- `DELETE /api/content/:id` - Delete content
-- `POST /api/content/:id/publish` - Publish content
-- `POST /api/content/:id/duplicate` - Duplicate content
-
-### AI Endpoints
-- `POST /api/ai/generate` - Generate content
-- `POST /api/ai/optimize` - Optimize content
-- `POST /api/ai/analyze` - Analyze content
-- `POST /api/ai/translate` - Translate content
-- `POST /api/ai/seo` - SEO optimization
-
-### Media Endpoints
-- `POST /api/media/upload` - Upload file
-- `GET /api/media` - List media files
-- `DELETE /api/media/:id` - Delete media file
-- `POST /api/media/optimize` - Optimize image
-
-### Analytics Endpoints
-- `GET /api/analytics/dashboard` - Dashboard metrics
-- `GET /api/analytics/content/:id` - Content analytics
-- `GET /api/analytics/audience` - Audience analytics
-- `GET /api/analytics/traffic` - Traffic analytics
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-### Getting Help
-- **Documentation**: [docs/](docs/)
-- **API Reference**: [docs/api/](docs/api/)
-- **Community**: [GitHub Discussions](https://github.com/your-org/ai-cms/discussions)
-- **Issues**: [GitHub Issues](https://github.com/your-org/ai-cms/issues)
-
-### Professional Support
-- **Enterprise Support**: Contact us for enterprise-grade support
-- **Custom Development**: We offer custom development services
-- **Training**: Team training and workshops available
-
-## 🚀 Roadmap
-
-### Version 1.1 (Q2 2024)
-- [ ] Advanced AI content generation
-- [ ] Enhanced collaboration features
-- [ ] Mobile app development
-- [ ] Advanced analytics dashboard
-
-### Version 1.2 (Q3 2024)
-- [ ] Multi-tenant support
-- [ ] Advanced workflow management
-- [ ] API v2 with GraphQL
-- [ ] Advanced SEO tools
-
-### Version 2.0 (Q4 2024)
-- [ ] Headless CMS capabilities
-- [ ] Advanced AI models integration
-- [ ] Enterprise-grade security
-- [ ] White-label solutions
 
 ---
 
-**Built with ❤️ by MiniMax Agent**
+## 🗺 Roadmap
 
-*This is a comprehensive, production-ready AI-Powered Content Management System designed for modern web applications. It features a sophisticated architecture with microservices, real-time collaboration, AI-powered content generation, and enterprise-grade security features.*#   c m s - a i - s y s t e m 
- 
- 
+### Version 1.0 (Current)
+- [x] User authentication (JWT + OAuth)
+- [x] Content CRUD operations
+- [x] Media library
+- [x] AI content generation
+- [x] Real-time collaboration
+- [x] Analytics dashboard
+- [x] Dark mode UI
+
+### Version 1.1 (Q1 2025)
+- [ ] GraphQL API support
+- [ ] Advanced A/B testing
+- [ ] Custom workflows
+- [ ] Webhook integrations
+- [ ] Content templates
+
+### Version 1.2 (Q2 2025)
+- [ ] Mobile app (React Native)
+- [ ] Plugin system
+- [ ] White-label support
+- [ ] Multi-tenant architecture
+- [ ] Advanced AI models (Claude, Gemini)
+
+### Version 2.0 (Q3 2025)
+- [ ] Headless CMS mode
+- [ ] E-commerce integration
+- [ ] Automated content pipelines
+- [ ] Enterprise SSO (SAML)
+- [ ] Custom AI model training
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community amazing! Any contributions you make are **greatly appreciated**.
+
+### How to Contribute
+
+1. **Fork** the repository
+2. **Clone** your fork
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/cms-ai-system.git
+   ```
+3. **Create** a feature branch
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+4. **Make** your changes
+5. **Test** your changes
+   ```bash
+   npm test
+   ```
+6. **Commit** your changes
+   ```bash
+   git commit -m "feat: add amazing feature"
+   ```
+7. **Push** to your fork
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+8. **Open** a Pull Request
+
+### Commit Convention
+
+We use [Conventional Commits](https://www.conventionalcommits.org/):
+
+| Type | Description |
+|------|-------------|
+| `feat` | New feature |
+| `fix` | Bug fix |
+| `docs` | Documentation changes |
+| `style` | Code formatting |
+| `refactor` | Code refactoring |
+| `test` | Adding tests |
+| `chore` | Maintenance tasks |
+
+### Code Style
+
+- **ESLint** for linting
+- **Prettier** for formatting
+- **TypeScript** strict mode
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+```
+MIT License
+
+Copyright (c) 2024 webspoilt
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+---
+
+## 📞 Contact
+
+**webspoilt**
+
+- GitHub: [@webspoilt](https://github.com/webspoilt)
+- Repository: [cms-ai-system](https://github.com/webspoilt/cms-ai-system)
+
+---
+
+<div align="center">
+
+### Show Your Support
+
+If this project helped you, please consider giving it a star!
+
+<a href="https://github.com/webspoilt/cms-ai-system">
+  <img src="https://img.shields.io/github/stars/webspoilt/cms-ai-system?style=for-the-badge&color=yellow" alt="GitHub Stars"/>
+</a>
+
+<br/><br/>
+
+**Made with ❤️ by [webspoilt](https://github.com/webspoilt)**
+
+</div>
