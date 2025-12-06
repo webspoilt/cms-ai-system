@@ -1,0 +1,41 @@
+{
+  "name": "ai-cms-system",
+  "version": "1.0.0",
+  "description": "AI-Powered Content Management System with microservices architecture",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "concurrently \"npm run dev:auth\" \"npm run dev:ai\" \"npm run dev:content\" \"npm run dev:analytics\"",
+    "dev:auth": "cd backend/auth && npm run dev",
+    "dev:ai": "cd backend/ai && npm run dev",
+    "dev:content": "cd backend/content && npm run dev",
+    "dev:analytics": "cd backend/analytics && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "npm run start:backend && npm run start:frontend",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "setup": "npm install && cd frontend && npm install && cd ../backend && npm install && cd auth && npm install && cd ../ai && npm install && cd ../content && npm install && cd ../analytics && npm install"
+  },
+  "keywords": [
+    "cms",
+    "ai",
+    "microservices",
+    "content-management",
+    "nodejs",
+    "react"
+  ],
+  "author": "MiniMax Agent",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
