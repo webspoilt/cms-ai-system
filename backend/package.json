@@ -1,0 +1,35 @@
+{
+  "name": "ai-cms-backend",
+  "version": "1.0.0",
+  "description": "Backend microservices for AI CMS",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:gateway\" \"npm run dev:auth\" \"npm run dev:ai\" \"npm run dev:content\" \"npm run dev:analytics\"",
+    "dev:gateway": "cd gateway && npm run dev",
+    "dev:auth": "cd auth && npm run dev",
+    "dev:ai": "cd ai && npm run dev",
+    "dev:content": "cd content && npm run dev",
+    "dev:analytics": "cd analytics && npm run dev",
+    "build": "npm run build:gateway && npm run build:auth && npm run build:ai && npm run build:content && npm run build:analytics",
+    "build:gateway": "cd gateway && npm run build",
+    "build:auth": "cd auth && npm run build",
+    "build:ai": "cd ai && npm run build",
+    "build:content": "cd content && npm run build",
+    "build:analytics": "cd analytics && npm run build",
+    "start": "concurrently \"npm run start:gateway\" \"npm run start:auth\" \"npm run start:ai\" \"npm run start:content\" \"npm run start:analytics\"",
+    "start:gateway": "cd gateway && npm start",
+    "start:auth": "cd auth && npm start",
+    "start:ai": "cd ai && npm start",
+    "start:content": "cd content && npm start",
+    "start:analytics": "cd analytics && npm start",
+    "test": "npm run test:gateway && npm run test:auth && npm run test:ai && npm run test:content && npm run test:analytics",
+    "test:gateway": "cd gateway && npm test",
+    "test:auth": "cd auth && npm test",
+    "test:ai": "cd ai && npm test",
+    "test:content": "cd content && npm test",
+    "test:analytics": "cd analytics && npm test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
